@@ -85,19 +85,32 @@ def hogwarts_by_house(filename):
     [['Abercrombie', 'Bell', 'Brown', 'Coote', 'Finnigan', 'Granger', 'Johnson', 'Jordan', 'Kirke', 'Longbottom', 'Macdonald', 'McDonald', 'McLaggen', 'Patil', 'Peakes', 'Potter', 'Robins', 'Sloper', 'Thomas', 'Vane', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Wood'], ['Baddock', 'Bletchley', 'Bullstrode', 'Crabbe', 'Flint', 'Goyle', 'Higgs', 'Malfoy', 'Parkinson', 'Pritchard', 'Pucey', 'Zabini'], ['Bones', 'Branstone', 'Cauldwell', 'Diggory', 'Finch-Fletchley', 'Macmillan', 'Madley', 'Midgeon', 'Smith', 'Whitby', 'Zeller'], ['Ackerley', 'Belby', 'Boot', 'Brocklehurst', 'Carmichael', 'Clearwater', 'Corner', 'Davies', 'Goldstein', 'Lovegood', 'Patil', 'Quirke', 'Turpin'], ['Abbott', 'Chang', 'Creevey', 'Creevey', 'Edgecombe', 'Nott', 'Spinnet'], ['Baron', 'Friar', 'Lady', 'Nick'], ['Flitwick', 'McGonagall', 'Snape', 'Sprout']]
 
     """
-
-    all_students = []
-    gryffindor = []
-    hufflepuff = []
-    slytherin = []
-    dumbledores_army = []
-    ravenclaw = []
-    ghosts = []
-    instructors = []
+# order = first, last, house, head of house, term or i (for instructor)/g for ghost
+   
 
     # Code goes here
 
-    return all_students
+    with open(filename) as personnel_data:
+
+        all_students = []
+        gryffindor = []
+        hufflepuff = []
+        slytherin = []
+        dumbledores_army = []
+        ravenclaw = []
+        ghosts = []
+        instructors = []
+
+
+        for line in personnel_data:
+            person = line.rstrip("\n")
+            person = person.split("|")
+            name = person[1]
+            house = person[2]
+
+            ###write the conditionals that will make this work
+        
+        return all_students
 
 
 def all_students_tuple_list(filename):
