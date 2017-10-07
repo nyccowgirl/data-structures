@@ -64,8 +64,7 @@ def sort_by_cohort(filename):
             elif person[4] == "Fall 2015":
                 fall_15.append(student_name)
             elif person[4] == "G":
-                ghosts.append(student_name)
-           
+                ghosts.append(student_name) 
 
         all_students.extend([fall_15, winter_16, spring_16, summer_16, ghosts])
         # set(all_students)
@@ -86,7 +85,6 @@ def hogwarts_by_house(filename):
 
     """
 # order = first, last, house, head of house, term or i (for instructor)/g for ghost
-   
 
     # Code goes here
 
@@ -101,7 +99,6 @@ def hogwarts_by_house(filename):
         ghosts = []
         instructors = []
 
-
         for line in personnel_data:
             person = line.rstrip("\n")
             person = person.split("|")
@@ -109,7 +106,24 @@ def hogwarts_by_house(filename):
             house = person[2]
 
             ###write the conditionals that will make this work
-        
+            if house == "Gryffindor":
+                gryffindor.append(name)
+            elif house == "Hufflepuff":
+                hufflepuff.append(name)
+            elif house == "Slytherin":
+                slytherin.append(name)
+            elif house == "Dumbledore's Army":
+                dumbledores_army.append(name)
+            elif house == "Ravenclaw":
+                ravenclaw.append(name)
+            else:
+                if person[4] == "G":
+                    ghosts.append(name)
+                elif person[4] == "I":
+                    instructors.append(name)
+
+        all_students.extend([sorted(gryffindor), sorted(slytherin), sorted(hufflepuff), sorted(ravenclaw), sorted(dumbledores_army), sorted(ghosts), sorted(instructors)])
+
         return all_students
 
 
@@ -126,9 +140,23 @@ def all_students_tuple_list(filename):
     [('Harry Potter', 'Gryffindor', 'McGonagall', 'Fall 2015'), ('Laura Madley', 'Hufflepuff', 'Sprout', 'Spring 2016'), ('Orla Quirke', 'Ravenclaw', '', 'Spring 2016'), ('Marcus Belby', 'Ravenclaw', 'Flitwick', 'Summer 2016'), ('Euan Abercrombie', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Neville Longbottom', 'Gryffindor', 'McGonagall', 'Winter 2016'), ('Vincent Crabbe', 'Slytherin', 'Snape', 'Summer 2016'), ('Parvati Patil', 'Gryffindor', 'McGonagall', 'Spring 2016'), ('Mandy Brocklehurst', 'Ravenclaw', 'Flitwick', 'Fall 2015'), ('Ritchie Coote', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Eloise Midgeon', 'Hufflepuff', 'Sprout', 'Spring 2016'), ('Zacharias Smith', 'Hufflepuff', 'Sprout', 'Spring 2016'), ('Katie Bell', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Cedric Diggory', 'Hufflepuff', 'Sprout', 'Winter 2016'), ('Ron Weasley', 'Gryffindor', 'McGonagall', 'Fall 2015'), ('Cormac McLaggen', 'Gryffindor', 'McGonagall', 'Spring 2016'), ('Lisa Turpin', 'Ravenclaw', 'Flitwick', 'Spring 2016'), ('Oliver Wood', 'Gryffindor', 'McGonagall', 'Fall 2015'), ('Pansy Parkinson', 'Slytherin', 'Snape', 'Winter 2016'), ('Demelza Robins', 'Gryffindor', 'McGonagall', 'Spring 2016'), ('Terry Boot', 'Ravenclaw', 'Flitwick', 'Summer 2016'), ('Lavender Brown', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Anthony Goldstein', 'Ravenclaw', 'Flitwick', 'Winter 2016'), ('Ernie Macmillan', 'Hufflepuff', 'Sprout', 'Spring 2016'), ('Colin Creevey', "Dumbledore's Army", 'McGonagall', 'Fall 2015'), ('Padma Patil', 'Ravenclaw', 'Flitwick', 'Winter 2016'), ('Cho Chang', "Dumbledore's Army", 'Flitwick', 'Fall 2015'), ('Gregory Goyle', 'Slytherin', 'Snape', 'Summer 2016'), ('Michael Corner', 'Ravenclaw', 'Flitwick', 'Fall 2015'), ('Luna Lovegood', 'Ravenclaw', 'Flitwick', 'Winter 2016'), ('Eleanor Branstone', 'Hufflepuff', 'Sprout', 'Winter 2016'), ('Draco Malfoy', 'Slytherin', 'Snape', 'Fall 2015'), ('Marcus Flint', 'Slytherin', 'Snape', 'Summer 2016'), ('Lee Jordan', 'Gryffindor', 'McGonagall', 'Winter 2016'), ('Marietta Edgecombe', "Dumbledore's Army", 'Flitwick', 'Winter 2016'), ('Andrew Kirke', 'Gryffindor', 'McGonagall', 'Winter 2016'), ('Ginny Weasley', 'Gryffindor', 'McGonagall', 'Winter 2016'), ('Mary Macdonald', 'Gryffindor', 'McGonagall', 'Winter 2016'), ('Blaise Zabini', 'Slytherin', 'Snape', 'Winter 2016'), ('Millicent Bullstrode', 'Slytherin', 'Snape', 'Spring 2016'), ('Seamus Finnigan', 'Gryffindor', 'McGonagall', 'Fall 2015'), ('Eddie Carmichael', 'Ravenclaw', 'Flitwick', 'Fall 2015'), ('Dean Thomas', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Percy Weasley', 'Gryffindor', 'McGonagall', 'Spring 2016'), ('Jack Sloper', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Theodore Nott', "Dumbledore's Army", 'Snape', 'Fall 2015'), ('Terence Higgs', 'Slytherin', 'Snape', 'Fall 2015'), ('Jimmy Peakes', 'Gryffindor', 'McGonagall', 'Spring 2016'), ('Natalie McDonald', 'Gryffindor', 'McGonagall', 'Winter 2016'), ('Justin Finch-Fletchley', 'Hufflepuff', 'Sprout', 'Spring 2016'), ('Rose Zeller', 'Hufflepuff', 'Sprout', 'Summer 2016'), ('Miles Bletchley', 'Slytherin', 'Snape', 'Spring 2016'), ('Stewart Ackerley', 'Ravenclaw', 'Flitwick', 'Summer 2016'), ('Adrian Pucey', 'Slytherin', 'Snape', 'Winter 2016'), ('Fred Weasley', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Hannah Abbott', "Dumbledore's Army", 'Sprout', 'Winter 2016'), ('Graham Pritchard', 'Slytherin', 'Snape', 'Winter 2016'), ('George Weasley', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Hermione Granger', 'Gryffindor', 'McGonagall', 'Fall 2015'), ('Penelope Clearwater', 'Ravenclaw', 'Flitwick', 'Fall 2015'), ('Malcolm Baddock', 'Slytherin', 'Snape', 'Spring 2016'), ('Angelina Johnson', 'Gryffindor', 'McGonagall', 'Fall 2015'), ('Susan Bones', 'Hufflepuff', 'Sprout', 'Winter 2016'), ('Dennis Creevey', "Dumbledore's Army", 'McGonagall', 'Fall 2015'), ('Roger Davies', 'Ravenclaw', 'Flitwick', 'Winter 2016'), ('Romilda Vane', 'Gryffindor', 'McGonagall', 'Summer 2016'), ('Alicia Spinnet', "Dumbledore's Army", 'McGonagall', 'Summer 2016'), ('Kevin Whitby', 'Hufflepuff', 'Sprout', 'Summer 2016'), ('Owen Cauldwell', 'Hufflepuff', 'Sprout', 'Winter 2016')]
     """
 
-    student_list = []
+    with open(filename) as personnel_data:
+        student_list = []
 
     # Code goes here
+        for line in personnel_data:
+            person = line.rstrip("\n")
+            person = person.split("|")
+            student_name = person[0] + " " + person[1]
+            house = person[2]
+            advisor = person[3]
+            cohort = person[4]
+
+            if cohort == "I" or cohort == "G":
+                continue
+            else:
+                student_info = (student_name, house, advisor, cohort)
+                student_list.append(student_info)
 
     return student_list
 
@@ -154,7 +182,16 @@ def find_cohort_by_student_name(student_list):
     """
 
     # Code goes here
+    while True:
+        user_input = raw_input("Who are you looking for? ")
 
+        #student_list = all_students_tuple_list(filename)
+
+        for student_tuple in student_list:
+            student_name, house, advisor, cohort = student_tuple
+            if user_input == student_name:
+                print "{} was in the {} cohort.".format(student_name, cohort)
+                return
     return "Student not found."
 
 
@@ -173,10 +210,31 @@ def find_name_duplicates(filename):
     set(['Weasley'])
 
     """
-
-    duplicate_names = set()
+    with open(filename) as personnel_data:
+        fall_15 = set()
+        spring_16 = set()
+        summer_16 = set()
+        winter_16 = set()
+        duplicate_names = set()
 
     # Code goes here
+        for line in personnel_data:
+            person = line.rstrip("\n")
+            person = person.split("|")
+
+            last_name = person[1]
+            cohort = person[4]
+
+            if cohort == "Fall 2015":
+                fall_15.add(last_name)
+            elif cohort == "Spring 2016":
+                spring_16.add(last_name)
+            elif cohort == "Summer 2016":
+                summer_16.add(last_name)
+            elif cohort == "Winter 2016":
+                winter_16.add(last_name)
+
+        duplicate_names = fall_15 & winter_16 & spring_16 & summer_16
 
     return duplicate_names
 
@@ -208,11 +266,26 @@ def find_house_members_by_student_name(student_list):
      """
 
     # Code goes here
+    while True:
+        user_input = raw_input("Choose a student: ")
 
-    return
+        #student_list = all_students_tuple_list(filename)
+
+        for student_tuple in student_list:
+            student_name, house, advisor, cohort = student_tuple
+            if user_input == student_name:
+                print "{} was in house {} in the {} cohort.".format(student_name, house, cohort)
+                print "The following students are also in their house:"
+
+                for other_student in student_list:
+                    if (other_student[0] != user_input) and (other_student[1] == house) and (other_student[3] == cohort):
+                        print other_student[0]
+                return
+    return "Student not found."
 
 #############################################################################
 # Here is some useful code to run these functions without doctests!
+
 
 # find_cohort_by_student_name(all_students_data)
 # find_house_members_by_student_name(all_students_data)
